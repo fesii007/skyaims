@@ -687,6 +687,58 @@ body {
     20%, 40%, 60%, 80% { transform: translateX(2px); }
 }
 </style>
+    <style>
+        @media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .header {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .service-grid, .expertise-grid, .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer img {
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+
+    .social-icons a {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .stat-item svg {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
+}
+        <style>
 </head>
 <body>
 

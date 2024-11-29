@@ -6,6 +6,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&amp;family=Cinzel:wght@400;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+    @media (max-width: 768px) { /* Target mobile view */
+    .comparison .section-title {
+        text-align: left; /* Align title to the left */
+    }
+
+    .comparison div[style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr; /* Display boxes in a single column */
+    }
+}
 :root {
     --primary: #1E90FF;      /* Light blue */
     --secondary: #0066CC;    /* Darker blue */

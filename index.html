@@ -6,26 +6,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&amp;family=Cinzel:wght@400;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-   @media (max-width: 768px) { /* Target mobile view */
-  .comparison .section-title {
-    text-align: left !important; /* Align title to the left */
-  }
-
-  .comparison > div > div { 
-    grid-template-columns: 1fr !important; /* Display boxes in a single column */
-    margin-bottom: 2rem !important; /* Add space between the stacked boxes */
-  }
-}
-    @media (max-width: 768px) { /* Target mobile view */
-    .comparison .section-title {
-        text-align: left; /* Align title to the left */
+@media (max-width: 768px) {
+    /* ... other mobile styles ... */
+    .nav-links {
+        display: none; /* This hides the links initially */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(30, 144, 255, 0.9);
+        padding: 1rem;
+        text-align: center;
+        z-index: 100;
+        gap: 1rem; /* Add this to maintain gap in the vertical menu */
     }
 
-    .comparison div[style*="grid-template-columns: repeat(2, 1fr)"] {
-        grid-template-columns: 1fr; /* Display boxes in a single column */
+    .nav-links.active {
+        display: flex; /* This shows the links in a column when active */
     }
+
+    /* ... other mobile styles ... */
+
+/* ... other styles ... */
+
+@media (max-width: 768px) {
+  /* ... other mobile styles ... */
+  .comparison > div {
+    grid-template-columns: 1fr !important; /* Forces the columns to stack vertically */
+  }
 }
-:root {
+
+}:root {
     --primary: #1E90FF;      /* Light blue */
     --secondary: #0066CC;    /* Darker blue */
     --accent: #00A86B;       /* Keep emerald green for accents */
@@ -96,10 +108,7 @@ body {
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); /* Added subtle white glow */
 }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
+
 
 .nav-links a {
     color: white;
@@ -710,9 +719,7 @@ body {
 <body>
 
 <nav class="navbar">
-    <button class="mobile-menu-toggle">
-    <i class="fas fa-bars"></i>
-</button>
+<div class="nav-toggle"> <i class="fas fa-bars"></i>  </div>
     <a href="https://skyaims.net" class="logo">
         <img src="https://i.ibb.co/XDPbQFj/60b7ea63-47de-4497-8af3-a16e5d62a095.png" alt="Sky Aims Technical Services Logo" style="height: 50px; width: auto;">
     </a>
@@ -1449,42 +1456,6 @@ body {
     </div>
 
     <style>
-      .mobile-menu-toggle {
-  display: none; /* Hide on desktop view */
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) { /* Target mobile view */
-  .mobile-menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none; /* Hide menu by default */
-    flex-direction: column;
-    position: absolute;
-    top: 60px; /* Adjust according to navbar height */
-    left: 0;
-    width: 100%;
-    background-color: rgba(30, 144, 255, 0.9);
-    padding: 1rem;
-    text-align: center;
-    z-index: 1000; /* Ensure menu appears above other elements */
-  }
-
-  .nav-links.active {
-    display: flex; /* Show menu when toggle button is clicked */
-  }
-
-  .nav-links a {
-    display: block; /* Stack links vertically */
-    margin: 0.5rem 0;
-  }
-}
         @keyframes craneSway {
             0%, 100% { transform: rotate(-2deg); }
             50% { transform: rotate(2deg); }
@@ -1931,12 +1902,23 @@ body {
         background-color: #0078d7;
         transform: scale(1.1);
     }
-    <script>
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
 </style>
+<script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+<body>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -691,6 +691,9 @@ body {
 <body>
 
 <nav class="navbar">
+    <button class="mobile-menu-toggle">
+    <i class="fas fa-bars"></i>
+</button>
     <a href="https://skyaims.net" class="logo">
         <img src="https://i.ibb.co/XDPbQFj/60b7ea63-47de-4497-8af3-a16e5d62a095.png" alt="Sky Aims Technical Services Logo" style="height: 50px; width: auto;">
     </a>
@@ -1427,6 +1430,36 @@ body {
     </div>
 
     <style>
+        .mobile-menu-toggle {
+    display: none; /* Hide on desktop view */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) { /* Target mobile view */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust according to navbar height */
+        left: 0;
+        width: 100%;
+        background-color: rgba(30, 144, 255, 0.9);
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when toggle button is clicked */
+    }
+}
         @keyframes craneSway {
             0%, 100% { transform: rotate(-2deg); }
             50% { transform: rotate(2deg); }
@@ -1873,4 +1906,12 @@ body {
         background-color: #0078d7;
         transform: scale(1.1);
     }
+    <script>
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
 </style>

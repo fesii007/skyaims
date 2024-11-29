@@ -7,6 +7,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
     @media (max-width: 768px) { /* Target mobile view */
+  .comparison .section-title {
+    text-align: left; /* Align title to the left */
+  }
+
+  .comparison div[style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr; /* Display boxes in a single column */
+  }
+
+  .comparison div[style*="grid-template-columns: repeat(2, 1fr)"]>div {
+    margin-bottom: 2rem; /* Add space between the stacked boxes */
+  }
+}
+    @media (max-width: 768px) { /* Target mobile view */
     .comparison .section-title {
         text-align: left; /* Align title to the left */
     }
@@ -1439,35 +1452,41 @@ body {
     </div>
 
     <style>
-        .mobile-menu-toggle {
-    display: none; /* Hide on desktop view */
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
+      .mobile-menu-toggle {
+  display: none; /* Hide on desktop view */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) { /* Target mobile view */
-    .mobile-menu-toggle {
-        display: block;
-    }
+  .mobile-menu-toggle {
+    display: block;
+  }
 
-    .nav-links {
-        display: none; /* Hide menu by default */
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Adjust according to navbar height */
-        left: 0;
-        width: 100%;
-        background-color: rgba(30, 144, 255, 0.9);
-        padding: 1rem;
-        text-align: center;
-    }
+  .nav-links {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust according to navbar height */
+    left: 0;
+    width: 100%;
+    background-color: rgba(30, 144, 255, 0.9);
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000; /* Ensure menu appears above other elements */
+  }
 
-    .nav-links.active {
-        display: flex; /* Show menu when toggle button is clicked */
-    }
+  .nav-links.active {
+    display: flex; /* Show menu when toggle button is clicked */
+  }
+
+  .nav-links a {
+    display: block; /* Stack links vertically */
+    margin: 0.5rem 0;
+  }
 }
         @keyframes craneSway {
             0%, 100% { transform: rotate(-2deg); }
@@ -1916,11 +1935,11 @@ body {
         transform: scale(1.1);
     }
     <script>
-const menuToggle = document.querySelector('.mobile-menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
+  menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-});
+  });
 </script>
 </style>

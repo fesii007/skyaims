@@ -687,6 +687,7 @@ body {
     20%, 40%, 60%, 80% { transform: translateX(2px); }
 }
 </style>
+    
     <style>
         @media (max-width: 768px) {
     .navbar .nav-links {
@@ -739,6 +740,177 @@ body {
     }
 }
         <style>
+        <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    
+    <style>
+        :root {
+            --primary: #1E90FF;
+            --secondary: #0066CC;
+            --accent: #00A86B;
+            --light: #FFFFFF;
+            --dark: #333333;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(30, 144, 255, 0.95);
+            padding: 1rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+        }
+
+        .comparison {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 4rem 2rem;
+        }
+
+        .comparison > div {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .comparison ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison ul li {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison ul li i {
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.8);
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                color: white;
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .comparison {
+                flex-direction: column;
+                padding: 2rem 1rem;
+                gap: 1rem;
+            }
+
+            .comparison > div {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
 </head>
         <head>
     <meta charset="utf-8">
@@ -771,6 +943,48 @@ body {
 </head>
 
 <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="https://i.ibb.co/XDPbQFj/60b7ea63-47de-4497-8af3-a16e5d62a095.png" alt="Logo">
+        </a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#team">Team</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Why We Stand Out Section -->
+    <section class="comparison">
+        <div>
+            <h3>Sky Aims</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> 24/7 Service</li>
+                <li><i class="fas fa-check-circle"></i> Certified Experts</li>
+                <li><i class="fas fa-check-circle"></i> Affordable Pricing</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Others</h3>
+            <ul>
+                <li><i class="fas fa-times-circle"></i> Limited Hours</li>
+                <li><
+
 
 <nav class="navbar">
     <a href="https://skyaims.net" class="logo">
@@ -902,6 +1116,13 @@ body {
     <!-- Add Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
+        <script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+</script>
+
         particlesJS('particles-js', {
             particles: {
                 number: { value: 80, density: { enable: true, value_area: 800 } },
